@@ -4,6 +4,5 @@ metadata:
   name: {{ .Release.Name }}-config
   namespace: {{ .Values.namespace }}
 data:
-  MONGODB_URI: {{ .Values.configmap.data.MONGODB_URI }}
-  PORT: {{ .Values.configmap.data.PORT }}
+  MONGO_URI: {{ .Values.configmap.data.MONGO_URI }}
   MONGO_INITDB_DATABASE: {{ .Values.configmap.data.MONGO_INITDB_DATABASE }}

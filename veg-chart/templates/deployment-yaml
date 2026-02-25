@@ -15,14 +15,14 @@ spec:
     spec:
       containers:
       - name: {{ .Values.deployment.name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: "{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
         ports:
         - containerPort: {{ .Values.deployment.port }}
         env:
-        - name: {{ .Values.deployment.env.name }}
+        - name: {{ .Values.deployment.image.env.name }}
           valueFrom:
             configMapKeyRef:
-              name: {{ .Values.deployment.image.env.configMapKeyRef }}
-              key: {{ .Values.deployment.image.env.key }}
+              name: {{ .Values.deployment.image.env.valueFrom.configMapKeyRef.name }}
+              key: {{ .Values.deployment.image.env.valueFrom.configMapKeyRef.key }}
 
         

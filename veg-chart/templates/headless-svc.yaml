@@ -8,6 +8,6 @@ spec:
     app: {{ .Values.headless.selector.app  }}
   ports:
     - protocol: TCP
-      port: {{ .Values.headleass.port }}
-      targetPort: {{ .Values.headleass.port }}
+      port: {{ .Values.headless.port }}
+      targetPort: {{ .Values.headless.port }}
   clusterIP: {{ .Values.headless.clusterIP }}

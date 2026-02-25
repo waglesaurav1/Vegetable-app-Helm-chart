@@ -23,11 +23,11 @@ spec:
           - mountPath: {{ .Values.statefulset.containers.volumeMounts.mountPath }}
             name: {{ .Values.statefulset.containers.volumeMounts.name }}
         env:
-        - name: {{ .Values.statefulset.containers.env.MONGO_INITDB_DATABASE.name }}
+        - name: {{ .Values.statefulset.containers.env.name }}
           valueFrom:
             configMapKeyRef:
-              name: {{ .Values.statefulset.containers.env.valueFrom.configMapKeyRef }}
-              key: {{ .Values.statefulset.containers.env.valueFrom.key }}
+              name: {{ .Values.statefulset.containers.env.valueFrom.configMapKeyRef.name }}
+              key: {{ .Values.statefulset.containers.env.valueFrom.configMapKeyRef.key }}
 
   volumeClaimTemplates:  # it is referencing pvc automatically instead of refering pvc manually in the pod or yaml file
     - metadata:
