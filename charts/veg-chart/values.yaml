@@ -7,7 +7,7 @@ configmap:
     MONGO_INITDB_DATABASE: "vegetable_order_app"
 
 #deployment details
-replicas: 4
+replicas: 5
 deployment:
   name: vegetable-order-app-deployment
   labels:
